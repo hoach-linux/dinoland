@@ -1,0 +1,27 @@
+.element-animation {
+  transform: translateY(80px);
+  opacity: 0;
+  transition: 0.7s ease-in-out;
+}
+.element-animation.element-show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.element-animation2 {
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.8s ease-in-out;
+}
+.element-animation2.element-show2 {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.element-animation3 {
+  transform: translateX(50%);
+  opacity: 0;
+  transition: 0.9s ease-in-out;
+}
+.element-animation3.element-show3 {
+  transform: translateX(0px);
+  opacity: 1;
+}

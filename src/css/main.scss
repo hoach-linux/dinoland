@@ -1,0 +1,1021 @@
+@import "nullstyle";
+@import "mixin";
+@import "animation";
+
+
+// Шрифты
+@font-face {
+  // название шрифта(чтобы не запутаться лучше указать название папки со шрифтом)
+  font-family: "Guerrillanormal";
+  // адрес шрифта и тип
+  src: url("/src/fonts/guerilla/Guerrillanormal.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Guerrillanormal", sans-serif;
+  font-weight: bolder;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+nav {
+  position: fixed;
+  background-color: none;
+  padding: 20px;
+  z-index: 99;
+
+  img {
+    cursor: pointer;
+  }
+}
+.navbar__body {
+  position: fixed;
+  min-height: 100vh;
+  min-width: 300px;
+  background-color: #fff;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid #000;
+  left: -100%;
+  transition: .3s ease-in-out;
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-width: 40px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    border-radius: 50%;
+
+    &:hover {
+      background: rgba(32, 32, 32, 0.1);
+    }
+  }
+  ul {
+    margin-top: 50px;
+    min-width: 80%;
+
+    li {
+      margin: 10px 0;
+
+      a {
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+        font-size: 26px;
+        display: inline-block;
+        color: #000;
+        transition: 0.2s ease-in-out;
+        font-weight: 100;
+
+        &:hover {
+          background-color: #000;
+          color: #fff !important;
+        }
+      }
+    }
+  }
+}
+.navbar__body.active {
+  left: 0;
+}
+.header {
+  background-color: #fe502dff;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  position: relative;
+
+  .container,
+  .main-offer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-offer {
+    background-color: #fff;
+    flex-direction: column;
+    min-width: 90%;
+    min-height: 400px;
+    text-align: center;
+    border: 5px solid #000;
+    border-radius: 10px;
+
+    h1 {
+      @include adaptive-font(175, 75);
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+    p {
+      @include adaptive-font(55, 35);
+      line-height: 100px;
+      max-width: 700px;
+    }
+  }
+  .img-wrapper1 {
+    position: absolute;
+    top: 25px;
+    left: 55px;
+    z-index: 1;
+
+    img {
+      max-width: 93%;
+    }
+  }
+  .img-wrapper2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    img {
+      max-width: 96%;
+    }
+  }
+  .img-wrapper3 {
+    position: absolute;
+    bottom: 20px;
+    left: 35px;
+    z-index: 1;
+
+    img {
+      max-width: 93%;
+    }
+  }
+  .img-wrapper4 {
+    position: absolute;
+    bottom: 20px;
+    right: 85px;
+    z-index: 1;
+
+    img {
+      max-width: 90%;
+    }
+  }
+  .img-wrapper5 {
+    position: absolute;
+    top: 5px;
+    right: 85px;
+    z-index: 1;
+
+    img {
+      max-width: 85%;
+    }
+  }
+  .img-wrapper-logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 350px;
+      z-index: 2;
+    }
+  }
+  .img-wrapper6 {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+  }
+  .img-wrapper7 {
+    position: absolute;
+    top: 10%;
+    right: 25%;
+  }
+  .img-wrapper8 {
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+  }
+  .img-wrapper9 {
+    position: absolute;
+    bottom: 55%;
+    right: -2.8%;
+  }
+  .img-wrapper10 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .img-wrapper11 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+  }
+  .img-wrapper12 {
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+  }
+}
+.dinoland-info {
+  background-color: #f9b074ff;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-offer {
+      background-color: #fff;
+      max-width: 60%;
+      max-height: 750px;
+      text-align: center;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px;
+      margin-left: 30%;
+
+      h3 {
+        @include adaptive-font(88, 58);
+        font-weight: bolder;
+        margin-bottom: 20px;
+      }
+      p {
+        @include adaptive-font(55, 35);
+        font-weight: 100;
+        line-height: 80px;
+        max-width: 830px;
+        margin-bottom: 50px;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 100%;
+
+        li {
+          @include adaptive-font(45, 25);
+          font-weight: 100;
+          padding: 10px 15px;
+          text-decoration: underline;
+        }
+      }
+    }
+    .logo-wrapper {
+      position: absolute;
+      top: 60px;
+      left: 80px;
+      background-color: #fff;
+      border: 2px solid #000;
+      min-width: 27%;
+      max-height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 180px 180px 50px 50px;
+      transform: rotate(-20deg);
+      z-index: 2;
+    }
+    .img-wrapper1 {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      z-index: 2;
+    }
+    .img-wrapper2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+
+      img {
+        max-height: 380px;
+      }
+    }
+    .img-wrapper3 {
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+      z-index: 2;
+    }
+    .img-wrapper4 {
+      position: absolute;
+      top: 40%;
+      left: 20%;
+    }
+    .img-wrapper5 {
+      position: absolute;
+      bottom: 25%;
+      left: 30%;
+    }
+    .img-wrapper6 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      img {
+        max-height: 130px;
+      }
+    }
+    .img-wrapper7 {
+      position: absolute;
+      top: 5%;
+      right: 0;
+    }
+  }
+}
+.dinoland-excursion {
+  background-color: #ffcc47;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .excursion-wrapper {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      position: relative;
+    }
+    .excursion__img-wrapper {
+      background: url(../img/3-page/img-3.jpg) no-repeat center / cover;
+      min-width: 600px;
+      min-height: 600px;
+      border-radius: 55% 45% 47% 53% / 50% 45% 55% 50%;
+    }
+    .main-offer {
+      background-color: #fff;
+      border: 4px solid #000;
+      border-radius: 10px;
+      min-height: 80vh;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      max-width: 50%;
+      padding: 0 14px;
+
+      span {
+        @include adaptive-font(50, 25);
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      p {
+        @include adaptive-font(35, 20);
+        margin: 20px 0;
+        font-weight: 100;
+      }
+    }
+    .excursion-header {
+      position: absolute;
+      top: -80px;
+      left: 130px;
+      background-color: #fff;
+      border: 2px solid #000;
+      min-width: 30%;
+      min-height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 180px 180px 50px 50px;
+      transform: rotate(-3deg);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        @include adaptive-font(70, 30);
+        font-weight: 100;
+        margin-bottom: 0px;
+      }
+      h2 {
+        @include adaptive-font(85, 50);
+        font-weight: bolder;
+      }
+    }
+    .img-wrapper1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      img {
+        max-width: 250px;
+      }
+    }
+    .img-wrapper2 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .img-wrapper3 {
+      position: absolute;
+      top: 30%;
+      left: 50px;
+    }
+    .img-wrapper4 {
+      position: absolute;
+      bottom: 0;
+      right: 50px;
+    }
+  }
+}
+.main-section {
+  padding: 30px 0;
+  background-color: #ffcc47;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-offer {
+    min-height: 75vh;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 70%;
+    padding: 0 30px;
+
+    p {
+      @include adaptive-font(42, 25);
+      font-weight: 100;
+      line-height: 60px;
+      margin: 20px 0;
+    }
+  }
+  .gallery-wrapper {
+    max-height: auto;
+    min-width: 30%;
+
+    #img-gallery-1 {
+      background: url(../img/4-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-2 {
+      background: url(../img/4-page/img-2.jpg) no-repeat center / cover;
+    }
+    #img-gallery-3 {
+      background: url(../img/5-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-4 {
+      background: url(../img/5-page/img-2.jpg) no-repeat center / cover;
+    }
+    #img-gallery-5 {
+      background: url(../img/6-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-6 {
+      background: url(../img/6-page/img-2.jpg) no-repeat center / cover;
+    }
+    #img-gallery-7 {
+      background: url(../img/7-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-8 {
+      background: url(../img/7-page/img-2.jpg) no-repeat center / cover;
+    }
+    #img-gallery-9 {
+      background: url(../img/8-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-10 {
+      background: url(../img/8-page/img-2.jpg) no-repeat center / cover;
+    }
+    #img-gallery-11 {
+      background: url(../img/9-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-12 {
+      background: url(../img/9-page/img-2.jpg) no-repeat center / cover;
+    }
+    #img-gallery-13 {
+      background: url(../img/10-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-14 {
+      background: url(../img/10-page/img-2.jpg) no-repeat center / cover;
+    }
+    #img-gallery-15 {
+      background: url(../img/11-page/img-1.jpg) no-repeat center / cover;
+    }
+    #img-gallery-16 {
+      background: url(../img/11-page/img-2.jpg) no-repeat center / cover;
+    }
+
+    .img-gallery {
+      margin: 20px;
+      min-height: 430px;
+      min-width: 90%;
+      border-radius: 30px;
+    }
+  }
+  .main-section-header {
+    position: absolute;
+    top: -50px;
+    left: 400px;
+    background-color: #fff;
+    border: 2px solid #000;
+    min-width: 30%;
+    max-width: 40%;
+    min-height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 180px 180px 50px 50px;
+    transform: rotate(-3deg);
+    z-index: 2;
+
+    h1 {
+      @include adaptive-font(90, 50);
+      font-weight: 100;
+      max-width: 80%;
+      text-align: center;
+      line-height: 80px;
+    }
+  }
+  .main-section__img-wrapper1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    img {
+      max-width: 180px;
+    }
+  }
+  .main-section__img-wrapper2 {
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+  }
+  .main-section__img-wrapper3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .main-section__img-wrapper4 {
+    position: absolute;
+    top: 35%;
+    left: -45px;
+  }
+  .main-section__img-wrapper5 {
+    position: absolute;
+    bottom: -55px;
+    left: 25%;
+  }
+  .main-section__img-wrapper6 {
+    position: absolute;
+    top: -35px;
+    left: 60%;
+  }
+  .main-section__img-wrapper7 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+#master-classes,
+#performance-representation,
+#graduation {
+  .main-section__img-wrapper1 {
+    transform: rotate(-20deg);
+    bottom: -30px;
+  }
+}
+#master-classes,
+#graduation-2 {
+  .main-section-header {
+    h1 {
+      @include adaptive-font(60, 37);
+    }
+  }
+  li {
+    list-style: inside;
+    @include adaptive-font(42, 25);
+    font-weight: 100;
+    line-height: 60px;
+    margin: 20px 0;
+    text-align: left;
+  }
+  span {
+    @include adaptive-font(42, 25);
+    font-weight: 100;
+    line-height: 60px;
+    margin: 20px 0;
+    text-align: center;
+    text-decoration: underline;
+    color: #0066cc;
+  }
+}
+#performance-representation {
+  h1 {
+    @include adaptive-font(75, 35);
+  }
+}
+#graduation {
+  h1 {
+    @include adaptive-font(50, 20);
+    text-transform: uppercase;
+    line-height: 50px;
+  }
+  .main-section-header {
+    top: -20px;
+  }
+}
+#quests-teambuilding {
+  min-height: 100vh;
+
+  .main-offer {
+    border-radius: 30px;
+    text-align: center;
+    min-width: 30% !important;
+    padding-top: 120px;
+
+    p {
+      @include adaptive-font(35, 25);
+      font-weight: 100;
+      line-height: 50px;
+    }
+    .main-section-header {
+      min-width: 20%;
+      min-height: 160px;
+    }
+  }
+  #header-1 {
+    top: 0;
+    left: 10%;
+  }
+  #header-2 {
+    top: 0;
+    left: 70%;
+
+    h1 {
+      @include adaptive-font(55, 35);
+    }
+  }
+}
+.footer {
+  background-color: #ffcc47;
+  overflow: hidden;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-offer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 60vw;
+    text-align: center;
+
+    .main-offer__header {
+      background-color: #fff;
+      min-width: 100%;
+      min-height: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      border: 4px solid #000;
+      margin-bottom: 50px;
+
+      h1 {
+        @include adaptive-font(100, 60);
+        font-weight: 100;
+      }
+    }
+    h2 {
+      @include adaptive-font(75, 40);
+      font-weight: 100;
+      margin-bottom: 90px;
+
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+  }
+  .img-wrapper-main {
+    img {
+      max-height: 778px;
+    }
+  }
+  .footer__img-wrapper1 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+  }
+  .footer__img-wrapper2 {
+    position: absolute;
+    top: 0;
+    left: 20%;
+  }
+  .footer__img-wrapper3 {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+  }
+  .footer__img-wrapper4 {
+    position: absolute;
+    top: 35%;
+    left: -45px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .img-wrapper {
+    display: none;
+  }
+  .header {
+    .img-wrapper-logo {
+      img {
+        max-width: 200px;
+      }
+    }
+    .img-wrapper1 {
+      img {
+        max-width: 63% !important;
+      }
+    }
+  }
+  .dinoland-info {
+    p {
+      line-height: normal !important;
+    }
+    li {
+      padding: 0 10px !important;
+    }
+    .logo-wrapper {
+      top: 0 !important;
+      left: 0 !important;
+      transform: rotate(0) !important;
+      border-radius: 0 0 30px 0 !important;
+
+      img {
+        max-width: 150px;
+      }
+    }
+    .img-wrapper3 {
+      left: 0 !important;
+
+      img {
+        max-width: 427px !important;
+      }
+    }
+    .img-wrapper2 {
+      img {
+        max-height: 300px !important;
+      }
+    }
+  }
+  .dinoland-excursion {
+    padding: 30px 0;
+
+    .excursion-wrapper {
+      background-color: #fff;
+      border: 4px solid #000;
+
+      .main-offer {
+        border: none;
+        background: none;
+      }
+      .excursion__img-wrapper {
+        border-radius: 0 !important;
+        min-width: 57%;
+        min-height: 808px !important;
+      }
+      .excursion-header {
+        top: 0 !important;
+        left: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        transform: rotate(0);
+        min-width: 57%;
+        border-right: 2px solid #000 !important;
+        border-bottom: 2px solid #000 !important;
+      }
+    }
+    .img-wrapper1 img {
+      max-width: 168px !important;
+    }
+  }
+  .main-section {
+    .container {
+      flex-wrap: wrap-reverse;
+    }
+    .main-offer {
+      position: relative;
+      padding-top: 80px !important;
+
+      .main-section-header {
+        border-radius: 10px 10px 0 0;
+        transform: rotate(0deg);
+        top: 0 !important;
+        left: 0 !important;
+        min-width: 100% !important;
+        min-height: 60px !important;
+        max-height: 90px !important;
+
+        h1 {
+          line-height: 40px !important;
+        }
+      }
+    }
+    .gallery-wrapper {
+      min-width: 100%;
+
+      .img-gallery {
+        margin: 20px 0;
+      }
+    }
+    .main-section__img-wrapper2 {
+      right: 0;
+
+      img {
+        max-height: 150px;
+      }
+    }
+  }
+  .main-section .main-section__img-wrapper1 img {
+    max-width: 120px;
+  }
+  #graduation .main-section-header {
+    top: 0;
+  }
+  .footer {
+    .main-offer {
+      min-width: 100%;
+
+      .img-wrapper-logo {
+        img {
+          max-width: 223px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    p {
+      line-height: normal !important;
+    }
+    .img-wrapper-logo {
+      img {
+        max-width: 120px;
+      }
+    }
+    .img-wrapper4 {
+      right: 0 !important;
+    }
+  }
+  .dinoland-info {
+    .main-offer {
+      min-width: 100%;
+      margin-left: 0 !important;
+    }
+    .img-wrapper3 {
+      img {
+        max-width: 197px !important;
+      }
+    }
+    .img-wrapper2 {
+      img {
+        max-height: 217px !important;
+      }
+    }
+  }
+  .dinoland-excursion {
+    .excursion-wrapper {
+      padding-top: 90px;
+      background: none !important;
+      border: none !important;
+      flex-direction: column;
+      border-radius: 10px;
+
+      .main-offer {
+        min-width: 100%;
+        margin-left: 0 !important;
+        max-height: auto !important;
+        background: #fff;
+        min-height: auto !important;
+        border-radius: 0 0 10px 10px !important;
+
+        span {
+          margin-top: 20px;
+        }
+      }
+      .excursion__img-wrapper {
+        min-width: 100%;
+        min-height: 300px !important;
+      }
+      .excursion-header {
+        min-width: 100%;
+        border: none !important;
+        min-height: auto;
+        border-radius: 10px 10px 0 0 !important;
+      }
+    }
+    .img-wrapper1 {
+      display: none;
+    }
+  }
+  .main-section {
+    .container {
+      .main-offer {
+        p,
+        li,
+        span {
+          line-height: normal !important;
+        }
+        min-height: auto !important;
+      }
+      .main-section__img-wrapper1 {
+        bottom: -10px;
+        left: -20px;
+
+        img {
+          max-width: 106px !important;
+        }
+      }
+      .main-section__img-wrapper2 {
+        right: 0;
+      }
+    }
+  }
+  #master-classes,
+  #performance-representation,
+  #graduation {
+    .main-section__img-wrapper1 {
+      left: -40px;
+    }
+  }
+  #graduation {
+    h1 {
+      line-height: 30px !important;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .header {
+    .img-wrapper1 {
+      img {
+        max-width: 36% !important;
+      }
+    }
+    .img-wrapper4 {
+      right: -40% !important;
+
+      img {
+        max-width: 40% !important;
+      }
+    }
+    .img-wrapper12 {
+      left: 20px !important;
+
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+  .dinoland-info {
+    p {
+      line-height: 30px !important;
+    }
+    .logo-wrapper {
+      border-radius: 0 !important;
+      min-width: 100% !important;
+      border: none !important;
+
+      img {
+        max-width: 120px !important;
+      }
+    }
+    .img-wrapper6,
+    .img-wrapper7 {
+      display: none;
+    }
+    .img-wrapper3 img {
+      max-width: 145px !important;
+    }
+    .img-wrapper2 img {
+      max-height: 168px !important;
+    }
+  }
+  .footer .main-offer .img-wrapper-logo img {
+    max-width: 180px;
+  }
+}
